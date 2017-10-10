@@ -1,0 +1,14 @@
+.no-padding{
+	padding: 0px
+}
+.anchor {
+	color: #000;
+}
+.anchor:hover {
+	color: blue;
+	transition-duration: 0.3s;
+	text-decoration: none;
+}
+.head-anchor:hover{
+	text-decoration: none;
+}
