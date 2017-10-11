@@ -16,7 +16,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$qProv
             })
             .state("/repoPage", {
                 url: "/mozilla/repos/:repoName",
-                templateUrl: 'views/main.html',
+                templateUrl: 'views/repo.html',
                 controller: 'repoCtrl',
                 params: {
                   repoName: null
@@ -41,6 +41,32 @@ function($scope, $state, $rootScope, $http,) {
             console.log(response);
             $scope.repoArray = response.data;
             console.log($scope.repoArray)
+            
+        }, function(error){
+            console.log(error)
+            
+        })
+        
+   }
+   $scope.setup();
+   $scope.getDate = function(date) {
+    return moment(date).format('ll');
+   }
+}])
+
+
+app.controller('repoCtrl', ['$scope','$state', '$rootScope','$http',
+function($scope, $state, $rootScope, $http,) {
+
+   $scope.setup = function() {
+      $http({
+            method: 'GET',
+            url:' https://api.github.com/repos/mozilla/' + $state.params.repoName,
+            
+        }).then(function(response){
+            console.log(response);
+            $scope.repo = response.data;
+            console.log($scope.repo)
             
         }, function(error){
             console.log(error)
