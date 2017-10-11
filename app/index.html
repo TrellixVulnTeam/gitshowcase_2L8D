@@ -5,7 +5,20 @@
     <meta charset="utf-8">
     <title>gitshowcase</title>
     <base href="/">
-
+    
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDVURgw5Z0jP19fpEhpyvPqpL0Q_WUd5FQ",
+    authDomain: "gitshowcase.firebaseapp.com",
+    databaseURL: "https://gitshowcase.firebaseio.com",
+    projectId: "gitshowcase",
+    storageBucket: "gitshowcase.appspot.com",
+    messagingSenderId: "801038063532"
+  };
+  firebase.initializeApp(config);
+</script>
     <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.min.css">
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css" />
